@@ -10,8 +10,6 @@ var port 		= (url[5]||null);
 var host 		= (url[4]||null);
 var storage 	= process.env.DATABASE_STORAGE;
 
-
-
 var path = require('path');
 
 //Cargar Modelo ORM

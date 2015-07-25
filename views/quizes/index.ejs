@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<form method="get" action="/quizes">
+	<div id="busqueda">
+		Filtro de preguntas
+		<input type="text" name="search"/>
+		<input type="submit" value="Buscar"/>
+	</div>
+</form>
 <div id="table1">
 	<table>
 	<% var i; for (i=0;i < quizes.length;i++) { %>

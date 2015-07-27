@@ -54,7 +54,6 @@ exports.new = function(req,res) {
 exports.create = function(req, res) {
 	var quiz = models.Quiz.build( req.body.quiz );
 
-	console.log(quiz);
 	quiz
 	.validate()
 	.then(
@@ -96,6 +95,13 @@ exports.update = function(req,res) {
 			} //Redireccion HTTP a lista de preguntas (URL relativo)
 		}
 	);
+};
+
+//DELETE /quizes/:id
+exports.destroy = function(req,res) {
+	req.quiz.destroy().then( function() {
+		res.redirect('/quizes');
+	}).catch(function(error){next(error)});
 };
 
 //2

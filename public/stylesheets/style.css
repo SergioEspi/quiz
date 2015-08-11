@@ -11,3 +11,5 @@ footer a						{ margin: 0px 20px 0px 0px }
 nav span						{ margin: 0px 10px 0px 0px; width: 100%; display: inline-block;}
 #ErrorMsgs						{ color: #D63301; font-size: small; }
 div#busqueda					{ border: 5px ridge #999; margin: 0px 0px 10px 0px; text-align:center;}
+
+.right							{float:right;}

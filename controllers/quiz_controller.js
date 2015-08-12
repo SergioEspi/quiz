@@ -31,7 +31,6 @@ exports.answer = function(req,res) {
 
 //GET /quizes
 exports.index = function(req,res) {
-	//console.log(req.query.search);
 	if(req.query.search){
 		var searchString = '%' + req.query.search.replace(' ', '%') + '%';
 		models.Quiz.findAll({ where: ["pregunta like ?", searchString] }).then(function(quizes) {

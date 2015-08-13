@@ -27,14 +27,38 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(partials());
 app.use(methodOverride('_method'));
 
+//Prueba para P2P M9
+var prueba;
+
+app.use(function myFunction(req,res,next){
+	var actual = Date.now();
+	var last;
+	var dif = 0;
+	
+	if(req.session.user){
+		last = new Date(req.session.user.last);
+		dif = actual - last;
+		if(dif > 20000){
+			delete req.session.user;
+			next();
+		} else {
+			req.session.user.last = actual;
+			next();
+		}
+	} else {
+		next();
+	}
+});
+
+
 //Helpers dinamicos
 app.use(function(req,res,next){
 	//guardar path en session.redir para despues de login o logout
-	if(!req.path.match(/\/login|\/logout/)){
+	if(!req.path.match(/\/login|\/logout/)){		
 		req.session.redir = req.path;
 	}
 	
-	//Hacer vidible req.session en las vistar
+	//Hacer vidible req.session en las vistas
 	res.locals.session = req.session;
 	next();
 });

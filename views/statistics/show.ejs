@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+
+<label class="titleStats">Estadísticas de la página</label>
+<br>
+<ul>
+	<li>Preguntas: <%= stats.questions %></li>
+	<li>Comentarios: <%= stats.comments %></li>
+	<li>Media de comentarios por preguntas: <%= (stats.comments/stats.questions).toFixed(2) %></li>
+	<li>Preguntas con comentarios: <%= stats.qcomments %></li>
+	<li>Preguntas sin comentarios: <%= (stats.questions-stats.qcomments) %></li>
+</ul>
+

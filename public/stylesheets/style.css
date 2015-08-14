@@ -13,3 +13,14 @@ nav span						{ margin: 0px 10px 0px 0px; width: 100%; display: inline-block;}
 div#busqueda					{ border: 5px ridge #999; margin: 0px 0px 10px 0px; text-align:center;}
 
 .right							{float:right;}
+.titleStats						{float:left; font-weight:bold;}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-top: 1em;
+    margin-bottom: 1 em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+    text-align:left;
+}
